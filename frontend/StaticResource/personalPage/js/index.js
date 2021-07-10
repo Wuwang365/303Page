@@ -3,7 +3,8 @@ var personalCard = new Vue({
     data: {
         name: "lxc",
         introduction: "",
-        photoPath: "../StaticResource/personalPage/img/photo.jpg"
+        photoPath: "../StaticResource/personalPage/img/photo.jpg",
+        date:(new Date()).toLocaleDateString()
     }
 })
 

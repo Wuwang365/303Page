@@ -2,20 +2,23 @@
 
 <head>
     <link href="../GlobalResource/css/bootstrap.css" rel="stylesheet">
-    <link href="../StaticResource/index/css/index.css" rel="stylesheet">
+    <link href="../StaticResource/personalPage/css/index.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="cardLine card mb-3" style="max-width: 540px;" id="personalCard">
-        <div class="row">
-            <div class="col-md-4">
-                <img v-bind:src="photoPath" class="img-fluid rounded-start">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">{{name}}</h5>
-                    <p class="card-text">{{introduction}}</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <img src="../GlobalResource/svg/nameBar.svg">
+    <div class="cardLine">
+        <div class="card mb-3 cardBlock" style="max-width: 540px;display: inline-block;" id="personalCard">
+            <div class="row">
+                <div class="col-md-4">
+                    <img v-bind:src="photoPath" class="img-fluid rounded-start">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{name}}</h5>
+                        <p class="card-text">{{introduction}}</p>
+                        <p class="card-text"><small class="text-muted">{{date}}</small></p>
+                    </div>
                 </div>
             </div>
         </div>
