@@ -6,7 +6,11 @@
     text-align: left;
 }
 
-.tabbarImg{
-    height: 15%;
+.tabbarImg {
+    height: 20%;
     width: 100%;
+}
+
+.optionList {
+    text-align: center;
 }
