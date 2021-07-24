@@ -1,4 +1,4 @@
-package com.dormitory.page.Controller;
+package com.dormitory.page.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,8 +15,6 @@ public class PersonInformation {
     @GetMapping("/{id}")
     @ResponseBody
     public String getPersonInformation(@PathVariable(value = "id") String id) {
-        File test = new File("");
-        System.out.println(test.getAbsolutePath());
         String encoding = "UTF-8";
         File info = new File("../resources/" + id + ".json");
         Long infoLength = info.length();

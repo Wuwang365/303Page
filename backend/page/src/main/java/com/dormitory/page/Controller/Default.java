@@ -1,4 +1,4 @@
-package com.dormitory.page.Controller;
+package com.dormitory.page.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +9,6 @@ public class Default {
     @GetMapping("/")
     @ResponseBody
     public String test() {
-        return "123";
+        return "this is a test for this site";
     }
 }
