@@ -3,9 +3,32 @@ var personalCard = new Vue({
     data: {
         name: "lxc",
         introduction: "",
-        photoPath: "../StaticResource/personalPage/img/photo.jpg",
-        date:(new Date()).toLocaleDateString()
-    }
-})
+        photoPath: "",
+        date: (new Date()).toLocaleDateString(),
+        option: "",
 
-personalCard.introduction = "躺平菜狗";
+    }
+});
+
+
+var load = new function (url) {
+    var urlObj = new URL(url);
+    urlObj.
+    const baseData = { name: "李晓晨", introduction: "123", photoPath: "../StaticResource/personalPage/img/photo.jpg" }
+    personalCard.name = baseData.name;
+    personalCard.introduction = baseData.introduction;
+    personalCard.photoPath = baseData.photoPath;
+}
+
+var requestDetail = new function(url,userName) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET",url,true);
+    xhr.send();
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState===4&&xhr.status===200){
+
+        }
+    }
+}
+
+load();
