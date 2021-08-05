@@ -17,7 +17,7 @@ public class PersonInformation {
 
     @GetMapping("/getPersonal")
     @ResponseBody
-    public Information getPersonInformation(@RequestParam(value = "userId", required = true) String userId) {
+    public Information getPersonInformation(@RequestParam(value = "userId") String userId) {
         return infoService.getInfo(userId);
     }
 

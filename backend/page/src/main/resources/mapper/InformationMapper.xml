@@ -5,6 +5,6 @@
         SELECT userId,userName From detail
     </select>
     <select id="getUserInfo" resultType="Information">
-        select * from detail where userName = #{userName}
+        select * from detail where userId = #{userId}
     </select>
 </mapper>
