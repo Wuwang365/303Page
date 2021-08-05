@@ -1,37 +1,30 @@
 package com.dormitory.page.controller;
 
+import com.dormitory.page.entity.Information;
+import com.dormitory.page.service.InformationService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-import java.io.File;
-import java.io.FileInputStream;
+import java.util.List;
+
 
 @Controller
-@RequestMapping("/Information")
+@RequestMapping("/information")
 public class PersonInformation {
-    @GetMapping("/{id}")
+    @Autowired
+    InformationService infoService;
+
+    @GetMapping("/getPersonal")
     @ResponseBody
-    public String getPersonInformation(@PathVariable(value = "id") String id) {
-        String encoding = "UTF-8";
-        File info = new File("../resources/" + id + ".json");
-        Long infoLength = info.length();
-        byte[] infoByte = new byte[infoLength.intValue()];
-        try {
-            FileInputStream in = new FileInputStream(info);
-            in.read(infoByte);
-            in.close();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        try {
-            return new String(infoByte, encoding);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return null;
+    public Information getPersonInformation(@RequestParam(value = "userId", required = true) String userId) {
+        return infoService.getInfo(userId);
+    }
+
+    @GetMapping("/getUserList")
+    @ResponseBody
+    public List<Information> getUserList() {
+        return infoService.getUserList();
     }
 
 }
