@@ -10,25 +10,25 @@ var personalCard = new Vue({
     }
 });
 
-
-var load = new function (url) {
-    var urlObj = new URL(url);
-    urlObj.
-    const baseData = { name: "李晓晨", introduction: "123", photoPath: "../StaticResource/personalPage/img/photo.jpg" }
-    personalCard.name = baseData.name;
-    personalCard.introduction = baseData.introduction;
-    personalCard.photoPath = baseData.photoPath;
+var load = function(){
+    getPersonalInfo("2018119085");
 }
 
-var requestDetail = new function(url,userName) {
+var getPersonalInfo = new function (userId) {
+    var url = "120.55.43.184:8080/information/getPersonal?userId="+userId;
     var xhr = new XMLHttpRequest();
     xhr.open("GET",url,true);
     xhr.send();
-    xhr.onreadystatechange = function(){
+    xhr.onreadystatechange=function(){
         if(xhr.readyState===4&&xhr.status===200){
-
+            var result = JSON.parse(xhr.responseText);
+            personalCard.name = result.userName;
+            personalCard.introduction = result.introduction;
+            personalCard.photoPath = result.photoPath;
         }
     }
+    const baseData = { name: "李晓晨", introduction: "123", photoPath: "../StaticResource/personalPage/img/photo.jpg" }
+    
 }
 
 load();
