@@ -1,5 +1,8 @@
 .cardLine {
+    display: inline-block;
     text-align: center;
+    margin-top: 3%;
+    margin-left: 3%;
 }
 
 .cardBlock {
@@ -11,7 +14,21 @@
     width: 100%;
 }
 
+.nameBar{
+    width: 100%;
+}
+
 .optionList {
-    text-align: center;
-    background-color: bisque;
+    margin-left: 5%;
+    margin-top: 3%;
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
+}
+
+.detailIntroduction{
+    margin-top: 3%;
+    margin-right: 3%;
+    display: inline-block;
+    vertical-align: top;
 }

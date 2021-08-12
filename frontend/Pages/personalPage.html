@@ -6,35 +6,25 @@
 </head>
 
 <body>
-    <img src="../GlobalResource/svg/nameBar.svg">
+    <img src="../GlobalResource/svg/nameBar.svg" class="nameBar">
     <img src="../GlobalResource/img/barbk.jpg" class="tabbarImg">
     <div class="cardLine">
-        <div class="card mb-3 cardBlock" style="max-width: 540px;display: inline-block;" id="personalCard">
-            <div class="row">
-                <div class="col-md-4">
-                    <img v-bind:src="photoPath" class="img-fluid rounded-start">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">{{name}}</h5>
-                        <p class="card-text">{{introduction}}</p>
-                        <p class="card-text"><small class="text-muted">{{date}}</small></p>
-                    </div>
-                </div>
+        <div class="card" style="width: 18rem;" id="personalCard">
+            <img v-bind:src="photoPath" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{name}}</h5>
+                <p class="card-text">{{introduction}}</p>
             </div>
         </div>
     </div>
     <div class="optionList">
-        <div class="btn-group btn-group-justified" role="group">
-            <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default">科研方向</button>
-            </div>
-            <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default">工作成果</button>
-            </div>
-            <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default">工作经历</button>
-            </div>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary" id="direction">科研方向</button>
+            <button type="button" class="btn btn-secondary"id="education">教育经历</button>
+            <button type="button" class="btn btn-secondary" id="achievement">科研成果</button>
+        </div>
+        <div class="detailIntroduction" id="detailIntroduction">
+            <div v-for="item in detail" v-bind:id="item">{{item}}</div>
         </div>
     </div>
     <script src="../GlobalResource/js/jquery-3.6.0.min.js"></script>
