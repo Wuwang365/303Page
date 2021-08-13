@@ -34,7 +34,17 @@ var load = function () {
     if (!getQueryVariable("id")) {
         getPersonalInfo("1111111111")
     } else {
-        getPersonalInfo(getQueryVariable("id"));
+        let p = request(getQueryVariable("id"));
+        p.then((text) => {
+            var result = JSON.parse(text);
+            personalCard.name = result.userName;
+            personalCard.introduction = result.information;
+            personalCard.photoPath = result.photoPath;
+            personDetail.direction = result.direction;
+            personDetail.education = result.education;
+            personDetail.achievement = result.achievement;
+            document.getElementById("direction").click();
+        });
     }
 }
 function getQueryVariable(variable) {
@@ -46,23 +56,18 @@ function getQueryVariable(variable) {
     }
     return (false);
 }
-var getPersonalInfo = function (userId) {
-    var url = "http://127.0.0.1:3036/information/getPersonal?userId=" + userId;
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", url, true);
-    xhr.send();
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            var result = JSON.parse(xhr.responseText);
-            personalCard.name = result.userName;
-            personalCard.introduction = result.information;
-            personalCard.photoPath = result.photoPath;
-            personDetail.direction = result.direction;
-            personDetail.education = result.education;
-            personDetail.achievement = result.achievement;
+var request = function (id) {
+    return new Promise((resolve, reject) => {
+        var url = "http://127.0.0.1:3036/information/getPersonal?userId=" + id;
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.send();
+        xhr.onload = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                resolve(xhr.responseText);
+            }
         }
-    }
-
+    });
 }
 
 load();
