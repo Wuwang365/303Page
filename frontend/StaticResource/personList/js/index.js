@@ -1,15 +1,17 @@
 var userContent = new Vue({
     el: '#personContent',
-    data: []
+    data: {
+        users:[]
+    }
 })
-Vue.component("personCard", {
+Vue.component("person-card", {
     template: `
-    <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+    <div class="card cardself" style="width: 18rem;">
+  <img :src="photoPath" class="card-img-top person-img" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a v-bind:href={{urlBase+id}} class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">{{name}}</h5>
+    <p class="card-text">{{information}}</p>
+    <a v-bind:href="urlBase+id" class="btn btn-primary">了解更多</a>
   </div>
 </div>
     `,
@@ -18,14 +20,14 @@ Vue.component("personCard", {
             urlBase: "./personalPage.html?id=",
         }
     },
-    props: ["id"]
+    props: ["id","name","photo-path","information"]
 })
 
 var request = () => {
     return new Promise((resolve, reject) => {
         var url = "http://127.0.0.1:3036/information/getUserList";
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", url, false);
+        xhr.open("GET", url, true);
         xhr.send();
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
@@ -38,6 +40,8 @@ var request = () => {
 var load = () => {
     let p = request();
     p.then(text => {
-        userContent.data = JSON.parse(text);
+        userContent.users = JSON.parse(text);
     });
 }
+
+load();

@@ -11,8 +11,22 @@
 }
 
 .personContent{
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-top: 3%;
     text-align: center;
+}
+
+.cardself{
+    display: inline-block;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    border: 0px;
+}
+
+.person-img{
+    width: 100%;
+    height: 250px;
+    border-radius: 50%;
 }
