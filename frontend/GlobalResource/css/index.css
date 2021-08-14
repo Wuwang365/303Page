@@ -1,3 +1,6 @@
+body{
+    margin-bottom: 10%;
+}
 .tabbar-font {
     font-weight: 600;
     margin-left: 15%;
@@ -13,7 +16,4 @@
 }
 .navbar-bg{
     background-color: #f8f9fa;
-}
-.bg-color{
-
 }
