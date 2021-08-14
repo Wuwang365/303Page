@@ -1,21 +1,27 @@
 <html>
 
 <head>
-    <link href="../GlobalResource/css/bootstrap.css" rel="stylesheet">
+    <link href="../GlobalResource/css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="../GlobalResource/css/index.css" rel="stylesheet">
     <link href="../StaticResource/personList/css/index.css" rel="stylesheet">
 </head>
 
-<img src="../GlobalResource/svg/nameBar.svg" class="nameBar">
-<img src="../GlobalResource/img/barbk.jpg" class="tabbarImg">
-<h3 class="title">研究所成员</h3>
-<div class="personContent" id="personContent">
-<person-card v-for="user in users" :id="user.userId" :name="user.userName" :photo-path="user.photoPath" :information="user.information">
+<body>
+    <div id="navbar">
+        <navbar></navbar>
+    </div>
+    <h3 class="title">研究所成员</h3>
+    <div class="personContent" id="personContent">
+        <person-card v-for="user in users" :id="user.userId" :name="user.userName" :photo-path="user.photoPath"
+            :information="user.information">
 
-</person-card>
-</div>
-<script src="../GlobalResource/js/jquery-3.6.0.min.js"></script>
-<script src="../GlobalResource/js/bootstrap.bundle.js"></script>
-<script src="../GlobalResource/js/vue.js"></script>
-<script src="../StaticResource/personList/js/index.js"></script>
+        </person-card>
+    </div>
+    <script src="../GlobalResource/js/package/jquery-3.6.0.min.js"></script>
+    <script src="../GlobalResource/js/package/bootstrap.bundle.js"></script>
+    <script src="../GlobalResource/js/package/vue.js"></script>
+    <script src="../GlobalResource/js/index.js"></script>
+    <script src="../StaticResource/personList/js/index.js"></script>
+</body>
 
 </html>

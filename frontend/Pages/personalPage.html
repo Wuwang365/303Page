@@ -1,13 +1,15 @@
 <html>
 
 <head>
-    <link href="../GlobalResource/css/bootstrap.css" rel="stylesheet">
+    <link href="../GlobalResource/css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="../GlobalResource/css/index.css" rel="stylesheet">
     <link href="../StaticResource/personalPage/css/index.css" rel="stylesheet">
 </head>
 
 <body>
-    <a href="index.html"><img src="../GlobalResource/svg/nameBar.svg" class="nameBar"></a>
-    <img src="../GlobalResource/img/barbk.jpg" class="tabbarImg">
+    <div id="navbar">
+        <navbar></navbar>
+    </div>
     <div class="cardLine">
         <div class="card" style="width: 18rem;" id="personalCard">
             <img v-bind:src="photoPath" class="card-img-top" alt="...">
@@ -20,16 +22,17 @@
     <div class="optionList">
         <div class="btn-group" role="group" aria-label="Basic example">
             <button type="button" class="btn btn-secondary" id="direction">科研方向</button>
-            <button type="button" class="btn btn-secondary"id="education">教育经历</button>
+            <button type="button" class="btn btn-secondary" id="education">教育经历</button>
             <button type="button" class="btn btn-secondary" id="achievement">科研成果</button>
         </div>
         <div class="detailIntroduction" id="detailIntroduction">
             <div v-for="item in detail" v-bind:id="item">{{item}}</div>
         </div>
     </div>
-    <script src="../GlobalResource/js/jquery-3.6.0.min.js"></script>
-    <script src="../GlobalResource/js/bootstrap.bundle.js"></script>
-    <script src="../GlobalResource/js/vue.js"></script>
+    <script src="../GlobalResource/js/package/jquery-3.6.0.min.js"></script>
+    <script src="../GlobalResource/js/package/bootstrap.bundle.js"></script>
+    <script src="../GlobalResource/js/package/vue.js"></script>
+    <script src="../GlobalResource/js/index.js"></script>
     <script src="../StaticResource/personalPage/js/index.js"></script>
 </body>
 
