@@ -17,3 +17,18 @@ body{
 .navbar-bg{
     background-color: #f8f9fa;
 }
+.navbar-login{
+
+}
+
+.navbar-userphoto{
+
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.login-status{
+    position: absolute;
+    right: 3%;
+}

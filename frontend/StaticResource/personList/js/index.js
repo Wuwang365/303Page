@@ -23,9 +23,8 @@ Vue.component("person-card", {
     props: ["id","name","photo-path","information"]
 })
 
-var request = () => {
+var request = (url) => {
     return new Promise((resolve, reject) => {
-        var url = "http://127.0.0.1:3036/information/getUserList";
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url, true);
         xhr.send();
@@ -38,7 +37,7 @@ var request = () => {
 }
 
 var load = () => {
-    let p = request();
+    let p = request("http://127.0.0.1:3036/information/getUserList");
     p.then(text => {
         userContent.users = JSON.parse(text);
     });
