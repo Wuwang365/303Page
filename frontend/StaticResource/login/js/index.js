@@ -3,16 +3,13 @@ var login = new Vue({
     data: {
         error: false,
         errorValue: ""
-    },
-    methods: {
-        confirm: confirm,
     }
 });
 
 var confirm = () => {
     let id = document.getElementById("userName").value;
     let password = document.getElementById("password").value;
-    let p = request("127.0.0.1:3036/user/login?id=" + id + "&password=" + password);
+    let p = request("http://127.0.0.1:3036/user/login?id=" + id + "&password=" + password,"","");
     p.then((text) => {
         if (text == "" || text == undefined) {
             login.error = true;
@@ -30,3 +27,4 @@ var confirm = () => {
         }
     });
 }
+document.getElementById("confirm").onclick = confirm;

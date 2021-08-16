@@ -8,7 +8,7 @@
 
 <body>
     <div id="navbar">
-        <navbar-template></navbar-template>
+        <navbar-template :login="login" :photo-path="photoPath" :user-name="userName" :id="id"></navbar-template>
     </div>
     <h3 class="title">研究所成员</h3>
     <div class="personContent" id="personContent">
@@ -20,6 +20,7 @@
     <script src="../GlobalResource/js/package/jquery-3.6.0.min.js"></script>
     <script src="../GlobalResource/js/package/bootstrap.bundle.js"></script>
     <script src="../GlobalResource/js/package/vue.js"></script>
+    <script src="../GlobalResource/js/util.js"></script>
     <script src="../GlobalResource/js/index.js"></script>
     <script src="../StaticResource/personList/js/index.js"></script>
 </body>

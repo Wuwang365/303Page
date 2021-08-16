@@ -8,7 +8,7 @@
 
 <body class="bg-color">
     <div id="navbar">
-        <navbar-template></navbar-template>
+        <navbar-template :login="login" :photo-path="photoPath" :user-name="userName" :id="id"></navbar-template>
     </div>
     <div class="login-form" id="login">
         <div class="row-margin login-label">登录</div>
@@ -27,13 +27,13 @@
             </div>
         </form>
         <div v-if="error" class="hint">{{errorValue}}</div>
-        <button type="button" class="btn btn-primary" id="confirm" v-on:click="confirm">确认</button>
+        <button type="button" class="btn btn-primary" id="confirm">确认</button>
     </div>
     <script src="../GlobalResource/js/package/jquery-3.6.0.min.js"></script>
     <script src="../GlobalResource/js/package/bootstrap.bundle.js"></script>
     <script src="../GlobalResource/js/package/vue.js"></script>
-    <script src="../GlobalResource/js/index.js"></script>
     <script src="../GlobalResource/js/util.js"></script>
+    <script src="../GlobalResource/js/index.js"></script>
     <script src="../StaticResource/login/js/index.js"></script>
 </body>
 

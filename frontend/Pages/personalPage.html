@@ -8,7 +8,7 @@
 
 <body>
     <div id="navbar">
-        <navbar-template></navbar-template>
+        <navbar-template :login="login" :photo-path="photoPath" :user-name="userName" :id="id"></navbar-template>
     </div>
     <div class="cardLine">
         <div class="card card-border" style="width: 18rem;" id="personalCard">
@@ -32,6 +32,7 @@
     <script src="../GlobalResource/js/package/jquery-3.6.0.min.js"></script>
     <script src="../GlobalResource/js/package/bootstrap.bundle.js"></script>
     <script src="../GlobalResource/js/package/vue.js"></script>
+    <script src="../GlobalResource/js/util.js"></script>
     <script src="../GlobalResource/js/index.js"></script>
     <script src="../StaticResource/personalPage/js/index.js"></script>
 </body>
