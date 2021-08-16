@@ -1,4 +1,4 @@
-package com.dormitory.page.controller;
+package com.dormitory.page.controller.authority;
 
 import cn.dev33.satoken.exception.NotLoginException;
 import cn.dev33.satoken.stp.StpUtil;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @CrossOrigin
-@RequestMapping("/user")
+@RequestMapping("/authority/user")
 public class Login {
     @Autowired
     UserService service;

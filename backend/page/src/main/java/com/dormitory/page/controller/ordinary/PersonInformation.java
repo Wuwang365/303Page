@@ -1,4 +1,4 @@
-package com.dormitory.page.controller;
+package com.dormitory.page.controller.ordinary;
 
 import com.dormitory.page.entity.Information;
 import com.dormitory.page.service.InformationService;
@@ -11,7 +11,7 @@ import java.util.List;
 
 @Controller
 @CrossOrigin
-@RequestMapping("/information")
+@RequestMapping("/ordinary/information")
 public class PersonInformation {
     @Autowired
     InformationService infoService;
