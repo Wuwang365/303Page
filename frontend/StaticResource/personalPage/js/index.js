@@ -34,7 +34,7 @@ var load = function () {
     if (!getQueryVariable("id")) {
         getPersonalInfo("1111111111")
     } else {
-        let p = request(getQueryVariable("id"));
+        let p = getRequest("http://127.0.0.1:3036/ordinary/information/getPersonal?userId="+getQueryVariable("id"));
         p.then((text) => {
             var result = JSON.parse(text);
             personalCard.name = result.userName;
@@ -55,19 +55,6 @@ function getQueryVariable(variable) {
         if (pair[0] == variable) { return pair[1]; }
     }
     return (false);
-}
-var request = function (id) {
-    return new Promise((resolve, reject) => {
-        var url = "http://127.0.0.1:3036/information/getPersonal?userId=" + id;
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", url, true);
-        xhr.send();
-        xhr.onload = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                resolve(xhr.responseText);
-            }
-        }
-    });
 }
 
 load();

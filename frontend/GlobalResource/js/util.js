@@ -1,4 +1,4 @@
-var request = (url,headerKey,headerValue)=>{
+var getRequest = (url,headerKey="",headerValue="")=>{
     return new Promise((resolve, reject) => {
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url, true);

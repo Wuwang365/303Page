@@ -9,7 +9,7 @@ var login = new Vue({
 var confirm = () => {
     let id = document.getElementById("userName").value;
     let password = document.getElementById("password").value;
-    let p = request("http://127.0.0.1:3036/user/login?id=" + id + "&password=" + password,"","");
+    let p = getRequest("http://127.0.0.1:3036/authority/user/login?id=" + id + "&password=" + password,"","");
     p.then((text) => {
         if (text == "" || text == undefined) {
             login.error = true;

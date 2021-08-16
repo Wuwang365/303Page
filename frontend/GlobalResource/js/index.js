@@ -16,7 +16,7 @@ Vue.component("navbar-template", {
             <a v-if="!login" href="./login.html"><button  class="navbar-login btn btn-primary">登录</button></a>
             
             <div v-else>
-            <a :href="urlBase+id" class="navbar-hint">
+            <a :href="urlBase" class="navbar-hint">
             <img class="navbar-userphoto" :src="photoPath" alt="missing">
             <span>{{userName}}</span>
             </a>
@@ -27,10 +27,10 @@ Vue.component("navbar-template", {
     </div>
 </nav>
 <img src="../GlobalResource/img/barbk.jpg" class="tabbar-img"></div>`,
-    props: ["login", "photoPath", "userName", "id"],
+    props: ["login", "photoPath", "userName"],
     data: () => {
         return {
-            urlBase: "./manage.html?id="
+            urlBase: "./manage.html"
         }
     },
 },
@@ -43,7 +43,6 @@ var navbar = new Vue({
         login: false,
         photoPath: "",
         userName: "",
-        id:""
     }
 })
 
@@ -52,7 +51,7 @@ function navbarLoad() {
     if (tokenName == undefined || tokenName == "") {
         navbar.login = false;
     } else {
-        var p = request("http://127.0.0.1:3036/user/getLoginUser", window.localStorage["tokenName"], window.localStorage["tokenValue"]);
+        var p = getRequest("http://127.0.0.1:3036/authority/user/getLoginUser", window.localStorage["tokenName"], window.localStorage["tokenValue"]);
         p.then(text => {
             console.log("123");
             if (text != "" && text != undefined) {

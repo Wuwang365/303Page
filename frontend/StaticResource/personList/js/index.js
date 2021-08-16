@@ -25,7 +25,7 @@ Vue.component("person-card", {
 
 
 var load = () => {
-    let p = request("http://127.0.0.1:3036/information/getUserList","","");
+    let p = getRequest("http://127.0.0.1:3036/ordinary/information/getUserList");
     p.then(text => {
         userContent.users = JSON.parse(text);
     });
