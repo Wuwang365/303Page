@@ -5,6 +5,6 @@
         SELECT COUNT(*) From Accounts WHERE userId=#{id} and password=#{password}
     </select>
     <select id="getLoginUser" resultType="Information">
-        select userName, photoPath From detail where userId=#{id}
+        select userName, photoPath, userId From detail where userId=#{id}
     </select>
 </mapper>
