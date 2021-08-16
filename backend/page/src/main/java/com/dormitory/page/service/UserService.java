@@ -21,7 +21,7 @@ public class UserService {
             SaTokenInfo info =  StpUtil.getTokenInfo();
             return new Token(info.tokenName,info.tokenValue);
         }else {
-            return new Token("false","false");
+            return null;
         }
     }
 

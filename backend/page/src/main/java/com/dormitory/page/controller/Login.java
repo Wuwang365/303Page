@@ -17,7 +17,7 @@ public class Login {
     @Autowired
     UserService service;
 
-    @GetMapping("")
+    @GetMapping("/login")
     @ResponseBody
     public Token login(@RequestParam(value = "id", required = true) String id,
                        @RequestParam(value = "password", required = true) String password) {
