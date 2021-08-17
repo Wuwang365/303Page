@@ -7,4 +7,8 @@
     <select id="getUserInfo" resultType="Information">
         select * from detail where userId = #{userId}
     </select>
+    <update id="updateUserInfo">
+        update detail set information=#{information.information},direction=#{information.direction},
+            education=#{information.education},achievement=#{information.achievement} where userId=#{information.userId}
+    </update>
 </mapper>

@@ -7,10 +7,7 @@ import com.dormitory.page.entity.Information;
 import com.dormitory.page.service.InformationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
 @Controller
@@ -18,15 +15,27 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ManageController {
     @Autowired
     InformationService informationService;
+
     @GetMapping("/getInformation")
     @ResponseBody
-    public Information getInformation(){
-        try{
+    public Information getInformation() {
+        try {
             StpUtil.isLogin();
             return informationService.getInfo(StpUtil.getLoginId().toString());
-        }
-        catch (NotLoginException e){
+        } catch (NotLoginException e) {
             return null;
+        }
+    }
+
+    @PostMapping("/updateInformation")
+    @ResponseBody
+    public String updateInformation(@RequestBody Information information) {
+        try {
+            StpUtil.isLogin();
+            information.setUserId(StpUtil.getLoginId().toString());
+            return informationService.updateInfo(information);
+        }catch (NotLoginException e){
+            return "not login";
         }
     }
 }
