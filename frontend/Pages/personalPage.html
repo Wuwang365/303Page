@@ -1,28 +1,39 @@
 <html>
 
 <head>
-    <link href="../GlobalResource/css/bootstrap.css" rel="stylesheet">
-    <link href="../StaticResource/index/css/index.css" rel="stylesheet">
+    <link href="../GlobalResource/css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="../GlobalResource/css/index.css" rel="stylesheet">
+    <link href="../StaticResource/personalPage/css/index.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="cardLine card mb-3" style="max-width: 540px;" id="personalCard">
-        <div class="row">
-            <div class="col-md-4">
-                <img v-bind:src="photoPath" class="img-fluid rounded-start">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">{{name}}</h5>
-                    <p class="card-text">{{introduction}}</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
+    <div id="navbar">
+        <navbar-template :login="login" :photo-path="photoPath" :user-name="userName"></navbar-template>
+    </div>
+    <div class="cardLine">
+        <div class="card card-border" style="width: 18rem;" id="personalCard">
+            <img v-bind:src="photoPath" class="card-img-top person-img" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{name}}</h5>
+                <p class="card-text">{{introduction}}</p>
             </div>
         </div>
     </div>
-    <script src="../GlobalResource/js/jquery-3.6.0.min.js"></script>
-    <script src="../GlobalResource/js/bootstrap.bundle.js"></script>
-    <script src="../GlobalResource/js/vue.js"></script>
+    <div class="optionList">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary" id="direction">科研方向</button>
+            <button type="button" class="btn btn-secondary" id="education">教育经历</button>
+            <button type="button" class="btn btn-secondary" id="achievement">科研成果</button>
+        </div>
+        <div class="detailIntroduction" id="detailIntroduction">
+            <div v-for="item in detail" v-bind:id="item">{{item}}</div>
+        </div>
+    </div>
+    <script src="../GlobalResource/js/package/jquery-3.6.0.min.js"></script>
+    <script src="../GlobalResource/js/package/bootstrap.bundle.js"></script>
+    <script src="../GlobalResource/js/package/vue.js"></script>
+    <script src="../GlobalResource/js/util.js"></script>
+    <script src="../GlobalResource/js/index.js"></script>
     <script src="../StaticResource/personalPage/js/index.js"></script>
 </body>
 
