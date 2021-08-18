@@ -1,0 +1,46 @@
+body {
+    margin-bottom: 30%;
+}
+
+.tabbar-font {
+    font-weight: 600;
+    margin-left: 15%;
+}
+
+.margin-length {
+    margin-left: 15%;
+}
+
+.navbar-content-margin {
+    margin-left: 3%;
+}
+
+.tabbar-img {
+    width: 100%;
+}
+
+.navbar-bg {
+    background-color: #f8f9fa;
+}
+
+.navbar-login {}
+
+.navbar-userphoto {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.login-status {
+    position: absolute;
+    right: 3%;
+}
+
+.navbar-hint{
+    color: black;
+    text-decoration: none;
+}
+.navbar-hint:visited{
+    color: black;
+    text-decoration: none;
+}

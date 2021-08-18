@@ -1,0 +1,36 @@
+.cardLine {
+    display: inline-block;
+    text-align: center;
+    margin-top: 3%;
+    margin-left: 3%;
+}
+
+.cardBlock {
+    text-align: left;
+}
+
+.optionList {
+    margin-left: 5%;
+    margin-top: 3%;
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
+}
+
+.detailIntroduction {
+    margin-top: 3%;
+    margin-right: 3%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.person-img {
+    width: 100%;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.card-border{
+    border: 0px;
+}
+
