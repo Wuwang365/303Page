@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dormitory.page.dao.UserDao">
+    <select id="login" resultType="Integer">
+        SELECT COUNT(*) From Accounts WHERE userId=#{id} and password=#{password}
+    </select>
+    <select id="getLoginUser" resultType="Information">
+        select userName, photoPath, userId From detail where userId=#{id}
+    </select>
+</mapper>
