@@ -4,13 +4,6 @@
   <link href="../GlobalResource/css/bootstrap/bootstrap.css" rel="stylesheet">
   <link href="../GlobalResource/css/index.css" rel="stylesheet">
   <link href="../StaticResource/manage/css/index.css" rel="stylesheet">
-  <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
-  <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
-    integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
 </head>
 
 <body class="bg-color">
@@ -29,6 +22,7 @@
         <button type="button" class="btn btn-light option-btn" id="education">教育经历</button>
         <button type="button" class="btn btn-light option-btn" id="achievement">科研成果</button>
         <button type="button" class="btn btn-light option-btn" id="autoReport">自动填报</button>
+        <button type="button" class="btn btn-light option-btn" id="signout">注销</button>
       </div>
     </div>
     <div class="input-container">
@@ -38,13 +32,6 @@
       </div>
 
       <div v-show="report">
-
-        <!-- <div class="alert alert-warning alert-dismissible" role="alert" style="z-index: 2;">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <strong>Warning!</strong> Better check yourself, you're not looking too good.
-        </div> -->
-
-
         <!-- UUkey -->
         <div class="row" style="margin: auto;">
           <div class="col-md-3 col-xs-2 "></div>
@@ -54,7 +41,8 @@
                 <span class="glyphicon glyphicon-link"></span>
               </span>
               <!-- <textarea class="form-control" placeholder="Please input UUKey"  rows="3"></textarea> -->
-              <input type="text" class="form-control" required id="uukey" placeholder="Please input UUKey" aria-describedby="basic-addon1">
+              <input type="text" class="form-control" required id="uukey" placeholder="Please input UUKey"
+                aria-describedby="basic-addon1">
             </div>
           </div>
           <div class="col-md-3 col-xs-2"></div>
@@ -85,7 +73,8 @@
               <span class="input-group-addon" id="basic-addon1">
                 <span class="glyphicon glyphicon-map-marker"></span>
               </span>
-              <input type="text" class="form-control" id="location" placeholder="location" aria-describedby="basic-addon1">
+              <input type="text" class="form-control" id="location" placeholder="location"
+                aria-describedby="basic-addon1">
             </div>
           </div>
           <div class="col-md-3 col-xs-2"></div>
@@ -167,11 +156,6 @@
   <script src="../GlobalResource/js/util.js"></script>
   <script src="../GlobalResource/js/index.js"></script>
   <script src="../StaticResource/manage/js/index.js"></script>
-
-  <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
-    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
-    crossorigin="anonymous"></script>
 </body>
 
 </html>

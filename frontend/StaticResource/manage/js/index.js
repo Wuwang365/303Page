@@ -3,8 +3,8 @@ var load = () => {
     let tokenValue = window.localStorage["tokenValue"];
     let p = getRequest("http://127.0.0.1:3036/authority/manage/getInformation", tokenName, tokenValue);
     p.then((text) => {
-        if(text=="not login"){
-            window.location.href("./login.html");
+        if (text == "not login") {
+            window.location.href = "./login.html";
         }
         if (text != "" && text != undefined) {
             try {
@@ -24,8 +24,8 @@ var load = () => {
 
     let re = getRequest("http://127.0.0.1:3036/authority/submitManage/getSubmitInfo", tokenName, tokenValue);
     re.then((text) => {
-        if(text=="not login"){
-            window.location.href("./login.html");
+        if (text == "not login") {
+            window.location.href = "./login.html";
         }
         if (text != "" && text != undefined) {
             try {
@@ -152,7 +152,7 @@ document.getElementById("update").onclick = () => {
 /** 提交自动填报信息 */
 document.getElementById("submitReport").onclick = () => {
     var uukey = document.getElementById("uukey").value;
-    var eai_sess= document.getElementById("eai_sess").value;
+    var eai_sess = document.getElementById("eai_sess").value;
     var location = document.getElementById("location").value;
     var email = document.getElementById("email").value;
 
@@ -190,5 +190,9 @@ document.getElementById("submitReport").onclick = () => {
     })
 
 }
-
+document.getElementById("signout").onclick = () => {
+    window.localStorage["tokenName"] = "";
+    window.localStorage["tokenValue"] = "";
+    window.location.href = "./index.html";
+}
 load();
