@@ -1,9 +1,8 @@
 package com.dormitory.page.controller.authority;
 
 import cn.dev33.satoken.exception.NotLoginException;
-import cn.dev33.satoken.stp.StpLogic;
 import cn.dev33.satoken.stp.StpUtil;
-import com.dormitory.page.entity.Information;
+import com.dormitory.page.entity.entity.Information;
 import com.dormitory.page.service.InformationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

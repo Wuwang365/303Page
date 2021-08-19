@@ -1,4 +1,4 @@
-package com.dormitory.page.entity;
+package com.dormitory.page.entity.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
