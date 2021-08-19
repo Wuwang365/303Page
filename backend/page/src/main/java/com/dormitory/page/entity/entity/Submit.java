@@ -1,14 +1,25 @@
 package com.dormitory.page.entity.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Submit {
     private int id;
     private String userId;
-    private String UUKey;
+    @JsonProperty(value = "UUKey")
+    private String uuKey;
     private String eai_sess;
     private String location;
     private String email;
     private String at_school;
     private String flag;
+
+    public String getUuKey() {
+        return uuKey;
+    }
+
+    public void setUuKey(String uuKey) {
+        this.uuKey = uuKey;
+    }
 
     public int getId() {
         return id;
@@ -26,13 +37,6 @@ public class Submit {
         this.userId = userId;
     }
 
-    public String getUUKey() {
-        return UUKey;
-    }
-
-    public void setUUKey(String UUKey) {
-        this.UUKey = UUKey;
-    }
 
     public String getEai_sess() {
         return eai_sess;
