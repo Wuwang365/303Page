@@ -3,6 +3,9 @@ var load = () => {
     let tokenValue = window.localStorage["tokenValue"];
     let p = getRequest("http://127.0.0.1:3036/authority/manage/getInformation", tokenName, tokenValue);
     p.then((text) => {
+        if(text=="not login"){
+            window.location.href("./login.html");
+        }
         if (text != "" && text != undefined) {
             try {
                 let result = JSON.parse(text);
@@ -12,6 +15,7 @@ var load = () => {
                 information.direction = result.direction;
                 information.achievement = result.achievement;
                 information.education = result.education;
+                document.getElementById("introduction").click();
             } catch (error) {
                 alert("error");
             }
@@ -20,10 +24,13 @@ var load = () => {
 
     let re = getRequest("http://127.0.0.1:3036/authority/submitManage/getSubmitInfo", tokenName, tokenValue);
     re.then((text) => {
+        if(text=="not login"){
+            window.location.href("./login.html");
+        }
         if (text != "" && text != undefined) {
             try {
                 let result = JSON.parse(text);
-                information.uukey = result.uukey;
+                information.uukey = result.UUKey;
                 information.eai_sess = result.eai_sess;
                 information.location = result.location;
                 information.email = result.email;
