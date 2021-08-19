@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dormitory.page.dao.SubmitDao">
+    <update id="updateSubmitInfo">
+        update submit set UUKey=#{UUKey}, eai_sess=#{eai_sess}, location=#{location},
+         email=#{email}, at_school=#{at_school}, flag=#{flag} where userId=#{userId}
+    </update>
+</mapper>
