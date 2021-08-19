@@ -15,13 +15,26 @@ public class SubmitManage {
     @Autowired
     SubmitService submitService;
 
-    @PostMapping("/update")
+    // requestURL: http://127.0.0.1:3036/authority/submitManage/updateSubmitInfo
+    @PostMapping("/updateSubmitInfo")
     @ResponseBody
     public String updateSubmitInfo(@RequestBody Submit submitInfo) {
         try {
             StpUtil.isLogin();
             submitInfo.setUserId(StpUtil.getLoginId().toString());
             return submitService.updateSubmitInfo(submitInfo);
+        } catch (NotLoginException e) {
+            return "not login";
+        }
+    }
+
+    // requestURL: http://127.0.0.1:3036/authority/submitManage/getSubmitInfo
+    @GetMapping("/getSubmitInfo")
+    @ResponseBody
+    public Object getSubmitInfo() {
+        try {
+            StpUtil.isLogin();
+            return submitService.getSubmitInfo(StpUtil.getLoginId().toString());
         } catch (NotLoginException e) {
             return "not login";
         }

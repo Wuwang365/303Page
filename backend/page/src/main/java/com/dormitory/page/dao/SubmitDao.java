@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SubmitDao {
     void updateSubmitInfo(Submit submitInfo);
+    Submit getSubmitInfo(String userId);
 }

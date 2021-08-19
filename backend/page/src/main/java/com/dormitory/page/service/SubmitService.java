@@ -18,4 +18,8 @@ public class SubmitService {
             return e.getMessage();
         }
     }
+
+    public Submit getSubmitInfo(String userId) {
+        return submitDao.getSubmitInfo(userId);
+    }
 }
