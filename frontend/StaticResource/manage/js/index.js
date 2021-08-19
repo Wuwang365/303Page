@@ -17,6 +17,33 @@ var load = () => {
             }
         }
     });
+
+    let re = getRequest("http://127.0.0.1:3036/authority/submitManage/getSubmitInfo", tokenName, tokenValue);
+    re.then((text) => {
+        if (text != "" && text != undefined) {
+            try {
+                let result = JSON.parse(text);
+                information.photoPath = result.photoPath;
+                information.name = result.userName;
+                information.introduction = result.information;
+                information.direction = result.direction;
+                information.achievement = result.achievement;
+                information.education = result.education;
+
+                information.uukey = result.uukey;
+                information.eai_sess = result.eai_sess;
+                information.location = result.location;
+                information.email = result.email;
+                information.atSchool = result.atSchool;
+                information.flag = result.flag;
+
+            } catch (error) {
+                alert("error");
+            }
+        }
+    });
+
+
 }
 
 var information = new Vue({
@@ -29,9 +56,16 @@ var information = new Vue({
         achievement: "",
         education: "",
         location: "",
+        uukey: "",
+        eai_sess: "",
+        location: "",
+        email: "",
+        atSchool: "",
+        flag: "",
         report: false
     }
 });
+
 
 /** 获取textare输入框 */
 var area = document.getElementById("input-area");
@@ -68,7 +102,21 @@ document.getElementById("direction").onclick = () => {
 document.getElementById("autoReport").onclick = () => {
     information.report = true;
     area.value = "";
+    document.getElementById("uukey").value = information.uukey;
+    document.getElementById("eai_sess").value = information.eai_sess;
+    document.getElementById("location").value = information.location;
+    document.getElementById("email").value = information.email;
+    if (information.atSchool == 1)
+        document.getElementById("atSchoolTrue").checked = true;
+    else
+        document.getElementById("atSchoolFalse").checked = true;
+    if (information.flag == true)
+        document.getElementById("flagTrue").checked = true;
+    else
+        document.getElementById("flagFalse").checked = true;
+
     information.location = "autoReport";
+
 }
 
 /** 更新个人信息 */
@@ -105,10 +153,7 @@ document.getElementById("update").onclick = () => {
 
 /** 提交自动填报信息 */
 document.getElementById("submitReport").onclick = () => {
-    var uukey = document.getElementById("uukey").value;
-    var eai_sess = document.getElementById("eai_sess").value;
-    var email = document.getElementById("email").value;
-    var location = document.getElementById("location").value;
+
 
     var atSchool;
     var atSchooleRadio = document.getElementsByName("atSchool");
@@ -137,7 +182,7 @@ document.getElementById("submitReport").onclick = () => {
     var body = JSON.stringify(json);
     console.log(body)
     var p = postRequest("http://127.0.0.1:3036/authority/submitManage/updateSubmitInfo",
-    
+
         body, window.localStorage["tokenName"], window.localStorage["tokenValue"]);
     p.then((text) => {
         alert(text);
