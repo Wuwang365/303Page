@@ -23,18 +23,11 @@ var load = () => {
         if (text != "" && text != undefined) {
             try {
                 let result = JSON.parse(text);
-                information.photoPath = result.photoPath;
-                information.name = result.userName;
-                information.introduction = result.information;
-                information.direction = result.direction;
-                information.achievement = result.achievement;
-                information.education = result.education;
-
                 information.uukey = result.uukey;
                 information.eai_sess = result.eai_sess;
                 information.location = result.location;
                 information.email = result.email;
-                information.atSchool = result.atSchool;
+                information.atSchool = result.at_school;
                 information.flag = result.flag;
 
             } catch (error) {
@@ -74,7 +67,6 @@ var area = document.getElementById("input-area");
 document.getElementById("introduction").onclick = () => {
     information.report = false;
     area.value = information.introduction.replaceAll("\\n", "\n");
-    console.log(area.value)
 }
 
 /** 科研成果菜单按钮 */
@@ -88,7 +80,6 @@ document.getElementById("achievement").onclick = () => {
 document.getElementById("education").onclick = () => {
     information.report = false;
     area.value = information.education.replaceAll("\\n", "\n");
-    console.log(area.value)
 }
 
 /** 研究方向菜单按钮 */
@@ -106,11 +97,11 @@ document.getElementById("autoReport").onclick = () => {
     document.getElementById("eai_sess").value = information.eai_sess;
     document.getElementById("location").value = information.location;
     document.getElementById("email").value = information.email;
-    if (information.atSchool == 1)
+    if (information.atSchool == "1")
         document.getElementById("atSchoolTrue").checked = true;
     else
         document.getElementById("atSchoolFalse").checked = true;
-    if (information.flag == true)
+    if (information.flag == "true")
         document.getElementById("flagTrue").checked = true;
     else
         document.getElementById("flagFalse").checked = true;
@@ -153,7 +144,10 @@ document.getElementById("update").onclick = () => {
 
 /** 提交自动填报信息 */
 document.getElementById("submitReport").onclick = () => {
-
+    var uukey = document.getElementById("uukey").value;
+    var eai_sess= document.getElementById("eai_sess").value;
+    var location = document.getElementById("location").value;
+    var email = document.getElementById("email").value;
 
     var atSchool;
     var atSchooleRadio = document.getElementsByName("atSchool");
