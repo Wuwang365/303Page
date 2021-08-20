@@ -1,0 +1,146 @@
+<html>
+
+<head>
+  <meta charset="utf-8"> 
+  <link href="./GlobalResource/css/bootstrap/bootstrap.css" rel="stylesheet">
+  <link href="./GlobalResource/css/index.css" rel="stylesheet">
+  <link href="./StaticResource/manage/css/index.css" rel="stylesheet">
+</head>
+
+<body class="bg-color">
+  <div id="navbar">
+    <navbar-template :login="login" :photo-path="photoPath" :user-name="userName"></navbar-template>
+  </div>
+  <div id="information" class="information">
+    <div class="card card-container" style="width: 20%;">
+      <img :src="photoPath" class="card-img-top photo" alt="...">
+      <div class="card-body">
+        <h5 class="card-title card-name">{{name}}</h5>
+      </div>
+      <div class="btn-group-vertical option-btn">
+        <button type="button" class="btn btn-light option-btn" id="introduction">介绍</button>
+        <button type="button" class="btn btn-light option-btn" id="direction">科研方向</button>
+        <button type="button" class="btn btn-light option-btn" id="education">教育经历</button>
+        <button type="button" class="btn btn-light option-btn" id="achievement">科研成果</button>
+        <button type="button" class="btn btn-light option-btn" id="autoReport">自动填报</button>
+        <button type="button" class="btn btn-light option-btn" id="signout">注销</button>
+      </div>
+    </div>
+    <div class="input-container">
+      <div v-show="!report">
+        <textarea class="form-control " id="input-area" rows="20"></textarea>
+        <button class="btn btn-primary update-button" id="update">更新</button>
+      </div>
+
+      <div v-show="report">
+        <!-- UUkey -->
+        <div class="row" style="margin: auto;">
+          <div class="col-md-3 col-xs-2 "></div>
+          <div class="col-md-6 col-xs-8 ">
+            <div class="input-group">
+              <span class="col-md-3 input-group-text" id="basic-addon1">UUKey</span>
+              <input type="text" id="uukey" class="col-md-9 form-control" placeholder="Please input UUKey"
+                aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-md-3 col-xs-2"></div>
+        </div>
+        <br>
+
+        <!-- eai_sess -->
+        <div class="row" style="margin: auto;">
+          <div class="col-md-3 col-xs-2 "></div>
+          <div class="col-md-6 col-xs-8 ">
+            <div class="input-group">
+              <span class="col-md-3 input-group-text" id="basic-addon1">eai_sess</span>
+              <input type="text" id="eai_sess" class="col-md-9 form-control" placeholder="Please input eai_sess"
+                aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-md-3 col-xs-2"></div>
+        </div>
+        <br>
+
+        <!-- location -->
+        <div class="row" style="margin: auto;">
+          <div class="col-md-3 col-xs-2 "></div>
+          <div class="col-md-6 col-xs-8 ">
+            <div class="input-group">
+              <span class="col-md-3 input-group-text" id="basic-addon1">Location</span>
+              <input type="text" id="location" class="col-md-9 form-control" placeholder="location" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-md-3 col-xs-2"></div>
+        </div>
+        <br>
+
+        <!-- email -->
+        <div class="row" style="margin: auto;">
+          <div class="col-md-3 col-xs-2 "></div>
+          <div class="col-md-6 col-xs-8 ">
+            <div class="input-group">
+              <span class="col-md-3 input-group-text" id="basic-addon1">Email</span>
+              <input type="text" id="email" class="col-md-9 form-control" placeholder="Please input your email"
+                aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-md-3 col-xs-2"></div>
+        </div>
+        <br>
+
+        <!-- at school -->
+        <div class="row" style="margin: auto;">
+          <div class="col-md-3 col-xs-2 "></div>
+          <div class="col-md-6 col-xs-8 ">
+            <div class=" input-group">
+              <span class="col-md-3 input-group-text" id="basic-addon1">是否在校</span>
+              <div class="col-md-9 form-control">
+                <label class="radio-inline">
+                  <input type="radio" name="atSchool" id="atSchoolTrue" value=1> 是
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="atSchool" id="atSchoolFalse" value=0> 否
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-xs-2"></div>
+        </div>
+        <br>
+
+        <!-- flag -->
+        <div class="row" style="margin: auto;">
+          <div class="col-md-3 col-xs-2 "></div>
+          <div class="col-md-6 col-xs-8 ">
+            <div class="input-group">
+              <span class="col-md-3 input-group-text" id="basic-addon1">是否填报</span>
+              <div class="col-md-9 form-control">
+                <label class="radio-inline">
+                  <input type="radio" name="flag" id="flagTrue" value=true> 是
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="flag" id="flagFalse" value=false> 否
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-xs-2"></div>
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary" id="submitReport">提交</button>
+
+      </div>
+
+    </div>
+
+  </div>
+  </div>
+  <script src="./GlobalResource/js/package/jquery-3.6.0.min.js"></script>
+  <script src="./GlobalResource/js/package/bootstrap.bundle.js"></script>
+  <script src="./GlobalResource/js/package/vue.js"></script>
+  <script src="./GlobalResource/js/util.js"></script>
+  <script src="./GlobalResource/js/index.js"></script>
+  <script src="./StaticResource/manage/js/index.js"></script>
+</body>
+
+</html>
