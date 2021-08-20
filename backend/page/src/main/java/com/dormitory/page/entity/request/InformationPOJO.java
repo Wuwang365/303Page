@@ -1,6 +1,6 @@
 package com.dormitory.page.entity.request;
 
-import com.dormitory.page.entity.Information;
+import com.dormitory.page.entity.entity.Information;
 
 public class InformationPOJO {
     private Information information;

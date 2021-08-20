@@ -1,7 +1,7 @@
 package com.dormitory.page.service;
 
 import com.dormitory.page.dao.InformationDao;
-import com.dormitory.page.entity.Information;
+import com.dormitory.page.entity.entity.Information;
 import com.dormitory.page.entity.request.InformationPOJO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

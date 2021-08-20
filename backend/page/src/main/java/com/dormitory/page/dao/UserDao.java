@@ -1,5 +1,5 @@
 package com.dormitory.page.dao;
-import com.dormitory.page.entity.Information;
+import com.dormitory.page.entity.entity.Information;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

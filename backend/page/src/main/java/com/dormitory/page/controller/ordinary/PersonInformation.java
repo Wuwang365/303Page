@@ -1,6 +1,6 @@
 package com.dormitory.page.controller.ordinary;
 
-import com.dormitory.page.entity.Information;
+import com.dormitory.page.entity.entity.Information;
 import com.dormitory.page.service.InformationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

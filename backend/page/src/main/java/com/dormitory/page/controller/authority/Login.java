@@ -2,7 +2,7 @@ package com.dormitory.page.controller.authority;
 
 import cn.dev33.satoken.exception.NotLoginException;
 import cn.dev33.satoken.stp.StpUtil;
-import com.dormitory.page.entity.Information;
+import com.dormitory.page.entity.entity.Information;
 import com.dormitory.page.entity.response.Token;
 import com.dormitory.page.service.UserService;
 
