@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dormitory.page.dao.SubmitDao">
     <update id="updateSubmitInfo">
-        update submit set UUKey=#{UUKey}, eai_sess=#{eai_sess}, location=#{location},
+        update submit set UUKey=#{uuKey}, eai_sess=#{eai_sess}, location=#{location},
          email=#{email}, at_school=#{at_school}, flag=#{flag} where userId=#{userId}
     </update>
     <select id="getSubmitInfo" resultType="com.dormitory.page.entity.entity.Submit">
