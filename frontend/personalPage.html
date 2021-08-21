@@ -1,13 +1,19 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8"> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
     <link href="./GlobalResource/css/bootstrap/bootstrap.css" rel="stylesheet">
     <link href="./GlobalResource/css/index.css" rel="stylesheet">
+    <link href="./StaticResource/index/css/index.css" rel="stylesheet">
     <link href="./StaticResource/personalPage/css/index.css" rel="stylesheet">
+
 </head>
 
-<body>
+<body class="bg-color">
     <div id="navbar">
         <navbar-template :login="login" :photo-path="photoPath" :user-name="userName"></navbar-template>
     </div>
@@ -30,12 +36,14 @@
             <div v-for="item in detail" v-bind:id="item">{{item}}</div>
         </div>
     </div>
+
     <script src="./GlobalResource/js/package/jquery-3.6.0.min.js"></script>
     <script src="./GlobalResource/js/package/bootstrap.bundle.js"></script>
     <script src="./GlobalResource/js/package/vue.js"></script>
     <script src="./GlobalResource/js/util.js"></script>
     <script src="./GlobalResource/js/index.js"></script>
     <script src="./StaticResource/personalPage/js/index.js"></script>
+
 </body>
 
 </html>

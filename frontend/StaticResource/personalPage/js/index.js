@@ -14,19 +14,22 @@ var personDetail = new Vue({
     el: "#detailIntroduction",
     data: {
         detail: ["waiting to be displayed..."],
-        direction: "",
-        education: "",
-        achievement: ""
+        direction: "test",
+        education: "test",
+        achievement: "test"
     }
 })
 
 document.getElementById("direction").onclick = () => {
+    if(personDetail.direction!=null)
     personDetail.detail = personDetail.direction.split("\\n");
 }
 document.getElementById("education").onclick = () => {
+    if(personDetail.education!=null)
     personDetail.detail = personDetail.education.split("\\n");
 }
 document.getElementById("achievement").onclick = () => {
+    if(personDetail.achievement!=null)  
     personDetail.detail = personDetail.achievement.split("\\n");
 }
 

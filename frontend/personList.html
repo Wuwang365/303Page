@@ -1,16 +1,22 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8"> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们</title>
     <link href="./GlobalResource/css/bootstrap/bootstrap.css" rel="stylesheet">
     <link href="./GlobalResource/css/index.css" rel="stylesheet">
+    <link href="./StaticResource/index/css/index.css" rel="stylesheet">
     <link href="./StaticResource/personList/css/index.css" rel="stylesheet">
+
 </head>
 
-<body>
+<body class="bg-color">
     <div id="navbar">
         <navbar-template :login="login" :photo-path="photoPath" :user-name="userName"></navbar-template>
     </div>
+
     <h3 class="title">研究所成员</h3>
     <div class="personContent" id="personContent">
         <person-card v-for="user in users" :id="user.userId" :name="user.userName" :photo-path="user.photoPath"
@@ -18,6 +24,7 @@
 
         </person-card>
     </div>
+
     <script src="./GlobalResource/js/package/jquery-3.6.0.min.js"></script>
     <script src="./GlobalResource/js/package/bootstrap.bundle.js"></script>
     <script src="./GlobalResource/js/package/vue.js"></script>
