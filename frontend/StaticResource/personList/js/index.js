@@ -7,7 +7,7 @@ var userContent = new Vue({
 Vue.component("person-card", {
     template: `
     <div class="card cardself" style="width: 18rem;">
-  <img :src="photoPath" class="card-img-top person-img" alt="...">
+  <img :src="photoPath" onerror="imgOnerror(this)" class="card-img-top person-img" alt="...">
   <div class="card-body">
     <h5 class="card-title">{{name}}</h5>
     <p class="card-text">{{information}}</p>
@@ -25,7 +25,7 @@ Vue.component("person-card", {
 
 
 var load = () => {
-    let p = getRequest("http://127.0.0.1:3036/ordinary/information/getUserList");
+    let p = getRequest(request_url_base+"/ordinary/information/getUserList");
     p.then(text => {
         userContent.users = JSON.parse(text);
     });

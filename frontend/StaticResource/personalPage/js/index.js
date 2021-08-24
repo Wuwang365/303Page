@@ -35,9 +35,9 @@ document.getElementById("achievement").onclick = () => {
 
 var load = function () {
     if (!getQueryVariable("id")) {
-        getPersonalInfo("1111111111")
+        window.location.href = "./index.html";
     } else {
-        let p = getRequest("http://127.0.0.1:3036/ordinary/information/getPersonal?userId="+getQueryVariable("id"));
+        let p = getRequest(request_url_base+"/ordinary/information/getPersonal?userId="+getQueryVariable("id"));
         p.then((text) => {
             var result = JSON.parse(text);
             personalCard.name = result.userName;

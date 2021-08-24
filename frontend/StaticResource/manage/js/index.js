@@ -1,7 +1,7 @@
 var load = () => {
     let tokenName = window.localStorage["tokenName"];
     let tokenValue = window.localStorage["tokenValue"];
-    let p = getRequest("http://127.0.0.1:3036/authority/manage/getInformation", tokenName, tokenValue);
+    let p = getRequest(request_url_base + "/authority/manage/getInformation", tokenName, tokenValue);
     p.then((text) => {
         if (text == "not login") {
             window.location.href = "./login.html";
@@ -22,7 +22,7 @@ var load = () => {
         }
     });
 
-    let re = getRequest("http://127.0.0.1:3036/authority/submitManage/getSubmitInfo", tokenName, tokenValue);
+    let re = getRequest(request_url_base + "/authority/submitManage/getSubmitInfo", tokenName, tokenValue);
     re.then((text) => {
         if (text == "not login") {
             window.location.href = "./login.html";
@@ -142,7 +142,7 @@ document.getElementById("update").onclick = () => {
         "direction": information.direction.replaceAll("\n", "\\n")
     }
     var body = JSON.stringify(json);
-    var p = postRequest("http://127.0.0.1:3036/authority/manage/updateInformation",
+    var p = postRequest(request_url_base + "/authority/manage/updateInformation",
         body, window.localStorage["tokenName"], window.localStorage["tokenValue"]);
     p.then((text) => {
         alert(text);
@@ -182,7 +182,7 @@ document.getElementById("submitReport").onclick = () => {
     }
     var body = JSON.stringify(json);
     console.log(body)
-    var p = postRequest("http://127.0.0.1:3036/authority/submitManage/updateSubmitInfo",
+    var p = postRequest(request_url_base + "/authority/submitManage/updateSubmitInfo",
 
         body, window.localStorage["tokenName"], window.localStorage["tokenValue"]);
     p.then((text) => {

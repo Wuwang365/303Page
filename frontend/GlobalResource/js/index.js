@@ -22,6 +22,9 @@ Vue.component("navbar-template", {
                     <li class="nav-item active">
                         <a class="nav-link" href="./personList.html">关于我们</a>
                     </li>
+                    <li class="nav-item active">
+                    <a class="nav-link" href="./register.html">加入我们</a>
+                    </li>
                     <div class="login-status">
                         <a v-if="!login" href="./login.html"><button
                                 class="navbar-login btn btn-primary">登录</button></a>
@@ -62,7 +65,7 @@ function navbarLoad() {
     if (tokenName == undefined || tokenName == "") {
         navbar.login = false;
     } else {
-        var p = getRequest("http://127.0.0.1:3036/authority/user/getLoginUser", window.localStorage["tokenName"], window.localStorage["tokenValue"]);
+        var p = getRequest(request_url_base + "/authority/user/getLoginUser", window.localStorage["tokenName"], window.localStorage["tokenValue"]);
         p.then(text => {
             console.log("123");
             if (text != "" && text != undefined) {

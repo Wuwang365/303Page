@@ -1,0 +1,31 @@
+.login-form {
+    margin-top: 5%;
+    text-align: center;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2.5%;
+    background-color: aliceblue;
+    padding: 2.5%;
+}
+
+.input-length {
+    width: 60%;
+}
+
+.label-length {
+    width: 30%;
+}
+
+.row-margin {
+    margin-bottom: 10%;
+}
+
+.login-label {
+    font-weight: 600;
+    font-size: large;
+}
+.hint{
+    color: red;
+    font-size: small;
+}

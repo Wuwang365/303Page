@@ -19,7 +19,7 @@
     </div>
     <div class="cardLine">
         <div class="card card-border" style="width: 18rem;" id="personalCard">
-            <img v-bind:src="photoPath" class="card-img-top person-img" alt="...">
+            <img v-bind:src="photoPath" onerror="imgOnerror(this)" class="card-img-top person-img" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{name}}</h5>
                 <p class="card-text">{{introduction}}</p>

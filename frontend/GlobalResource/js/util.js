@@ -30,3 +30,12 @@ var postRequest = (url, body, headerKey = "", headerValue = "") => {
         }
     })
 }
+
+function imgOnerror(img) {
+    img.src = "../GlobalResource/img/default.jpg";
+    img.οnerrοr = null;
+}
+
+const production_url = "http://120.55.43.184:3037";
+const develop_url = "http://127.0.0.1:3036";
+const request_url_base = develop_url;

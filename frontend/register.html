@@ -5,32 +5,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>登录</title>
+    <title>注册</title>
     <link href="./GlobalResource/css/bootstrap/bootstrap.css" rel="stylesheet">
     <link href="./GlobalResource/css/index.css" rel="stylesheet">
-    <link href="./StaticResource/index/css/index.css" rel="stylesheet">
-    <link href="./StaticResource/login/css/index.css" rel="stylesheet">
+    <link href="./StaticResource/register/css/index.css" rel="stylesheet">
+
 </head>
 
 <body class="bg-color">
     <div id="navbar">
         <navbar-template :login="login" :photo-path="photoPath" :user-name="userName"></navbar-template>
     </div>
-
     <div class="container">
         <div class="row">
             <div class="col-md-4"></div>
-            <div class="col-md-4 login-form " id="login">
-                <div class="row-margin login-label">登录</div>
+            <div class="col-md-4 login-form " id="register">
+                <div class="row-margin login-label">注册</div>
                 <form>
                     <div class="input-group">
-                        <span class="col-md-3 input-group-text">用户名</span>
-                        <input type="email" id="userName" class="col-md-9 form-control">
+                        <span class="col-md-3 input-group-text">邮&nbsp;&nbsp;箱</span>
+                        <input type="email" id="userId" class="col-md-9 form-control" placeholder="请输入您的注册邮箱">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="col-md-3 input-group-text">姓&nbsp;&nbsp;名</span>
+                        <input type="email" id="userName" class="col-md-9 form-control" placeholder="请输入您的姓名">
                     </div>
                     <br>
                     <div class="input-group">
                         <span class="col-md-3 input-group-text">密 &nbsp;&nbsp;码</span>
-                        <input type="password" id="password" class="col-md-9 form-control">
+                        <input type="password" id="password" class="col-md-9 form-control" placeholder="请输入您的密码">
                     </div>
                 </form>
                 <br>
@@ -45,7 +49,7 @@
     <script src="./GlobalResource/js/package/vue.js"></script>
     <script src="./GlobalResource/js/util.js"></script>
     <script src="./GlobalResource/js/index.js"></script>
-    <script src="./StaticResource/login/js/index.js"></script>
+    <script src="./StaticResource/register/js/index.js"></script>
 </body>
 
 </html>
