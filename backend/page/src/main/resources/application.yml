@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     name: dormitory
-    url: jdbc:mysql://120.55.43.184:3306/dormitory?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://120.55.43.184:3306/dormitory?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver

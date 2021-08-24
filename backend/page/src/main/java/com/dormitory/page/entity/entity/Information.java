@@ -12,6 +12,15 @@ public class Information {
     private String direction;
     private String education;
     private String achievement;
+    private String identify;
+
+    public String getIdentify() {
+        return identify;
+    }
+
+    public void setIdentify(String identify) {
+        this.identify = identify;
+    }
 
     public String getDirection() {
         return direction;

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dormitory.page.dao.RegisterDao">
+    <select id="checkRepeat" resultType="Integer">
+        SELECT count(*) From Accounts where userId = #{userId}
+    </select>
+    <insert id="createNewUser">
+        insert into Accounts (userId,password) values (#{userId},#{password});
+        insert into detail (userId,userName,photoPath) values (#{userId},#{userName},#{photoPath});
+        insert into submit (userId) values (#{userId});
+    </insert>
+</mapper>
