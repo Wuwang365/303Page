@@ -16,7 +16,6 @@ public class Register {
     @ResponseBody
     @PostMapping("")
     public String register(@RequestBody RegisterInfo info) {
-        info.setPhotoPath("../GlobalResource/img/" + info.getUserId().replace(".", "") + ".jpg");
         return registerService.createNewUser(info);
     }
 }
