@@ -33,7 +33,29 @@ public class ManageController {
             StpUtil.isLogin();
             information.setUserId(StpUtil.getLoginId().toString());
             return informationService.updateInfo(information);
-        }catch (NotLoginException e){
+        } catch (NotLoginException e) {
+            return "not login";
+        }
+    }
+
+    @GetMapping("/getPersonImg")
+    @ResponseBody
+    public String getPersonImg() {
+        try {
+            StpUtil.isLogin();
+            return informationService.getPersonImg(StpUtil.getLoginId().toString());
+        } catch (NotLoginException e) {
+            return "not login!";
+        }
+    }
+
+    @PostMapping("/changePersonImg")
+    @ResponseBody
+    public String changePersonImg(@RequestBody String imgBase64) {
+        try {
+            StpUtil.isLogin();
+            return informationService.changePersonImg(StpUtil.getLoginId().toString(), imgBase64);
+        } catch (NotLoginException e) {
             return "not login";
         }
     }

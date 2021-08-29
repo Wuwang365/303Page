@@ -28,4 +28,9 @@ public class PersonInformation {
         return infoService.getUserList();
     }
 
+    @GetMapping("/getPersonImg")
+    @ResponseBody
+    public String getPersonImg(@RequestParam(value = "userId") String userID) {
+        return infoService.getPersonImg(userID);
+    }
 }
