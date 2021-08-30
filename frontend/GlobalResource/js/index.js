@@ -70,10 +70,20 @@ function navbarLoad() {
             console.log("123");
             if (text != "" && text != undefined) {
                 let user = JSON.parse(text);
-                navbar.photoPath = user.photoPath;
+                // navbar.photoPath = user.photoPath;
                 navbar.userName = user.userName;
                 navbar.id = user.userId;
                 navbar.login = true;
+                let p2 = getRequest(request_url_base + "/authority/manage/getPersonImg", window.localStorage["tokenName"], window.localStorage["tokenValue"]);
+                p2.then((text) => {
+                    if (text == "not login") {
+                        window.location.href = "./login.html";
+                    }else{
+                        document.getElementById("smallProfile").src = text;
+                        console.log(text)
+                        
+                    }
+                });
             }
         });
     }

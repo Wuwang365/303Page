@@ -15,7 +15,7 @@ window.onload = function () {
 }
 
 // 小头像
-document.getElementById("smallProfile").src = base64Img;
+// document.getElementById("smallProfile").src = base64Img;
 
 
 function readFile() {
@@ -43,7 +43,7 @@ function readFile() {
             p.then((text) => {
                 // alert(text);
                 getProfile()
-
+                navbarLoad()
             })
 
         };
