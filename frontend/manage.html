@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人主页</title>
-    <link href="./GlobalResource/css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="./GlobalResource/css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="./GlobalResource/css/index.css" rel="stylesheet">
     <link href="./StaticResource/manage/css/index.css" rel="stylesheet">
     <link href="./StaticResource/index/css/index.css" rel="stylesheet">
@@ -18,8 +18,12 @@
     </div>
 
     <div id="information" class="information">
-        <div class="card card-container col-md-3 col-xs-2" >
-            <img :src="photoPath" class="card-img-top photo" alt="...">
+        <div class="card card-container col-md-3 col-xs-2">
+            <div style="height:auto;width: 100%;">
+                <img src="" id="mainProfile" class="card-img-top photo" alt="...">
+                <img src="./GlobalResource/img/camera.png" alt="" class="card-img-top camera" id="camera">
+            </div>
+
             <div class="card-body">
                 <h5 class="card-title card-name">{{name}}</h5>
             </div>
@@ -34,11 +38,24 @@
         </div>
 
         <div class="input-container col-md-8 col-xs-12">
+            <div id="father" style="display: none;">
+                <form method="POST" enctype="multipart/form-data" style="display: none;">
+                    <input type="file" name="file" accept=".jpg,.png,bmp,.jpeg" id="file" />
+                    <br>
+                    <input type="submit" id="submit" />
+                </form>
+                <button class="btn btn-primary" id='uploadBtn'>
+                    更换头像
+                </button>
+            </div>
+
+            <!-- 基本信息 -->
             <div v-show="!report">
                 <textarea class="form-control " id="input-area" rows="20"></textarea>
                 <button class="btn btn-primary update-button" id="update">更新</button>
             </div>
 
+            <!-- 疫情防控 -->
             <div v-show="report" class="upmargin">
                 <!-- UUkey -->
                 <div class="row" style="margin: auto;">
@@ -145,10 +162,15 @@
     </div>
     <script src="./GlobalResource/js/package/jquery-3.6.0.min.js"></script>
     <script src="./GlobalResource/js/package/bootstrap.bundle.js"></script>
+    <script src="./GlobalResource/js/package/bootstrap.min.js"></script>
     <script src="./GlobalResource/js/package/vue.js"></script>
     <script src="./GlobalResource/js/util.js"></script>
     <script src="./GlobalResource/js/index.js"></script>
     <script src="./StaticResource/manage/js/index.js"></script>
+
+
+    <script src="./StaticResource/manage/js/manage.js">
+    </script>
 </body>
 
 </html>

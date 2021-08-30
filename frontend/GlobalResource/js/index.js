@@ -30,7 +30,7 @@ Vue.component("navbar-template", {
                                 class="navbar-login btn btn-primary">登录</button></a>
                         <div v-else>
                             <a :href="urlBase" class="navbar-hint">
-                                <img class="navbar-userphoto" :src="photoPath" alt="missing">
+                                <img class="navbar-userphoto" :src="photoPath" alt="missing" id="smallProfile">
                                 <span>{{userName}}</span>
                             </a>
                         </div>

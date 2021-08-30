@@ -1,3 +1,16 @@
+var base64Img = "";
+function getProfile() {
+    let p = getRequest(request_url_base + "/authority/manage/getPersonImg", window.localStorage["tokenName"], window.localStorage["tokenValue"]);
+    p.then((text) => {
+        if (text == "not login") {
+            window.location.href = "./login.html";
+        }else{
+            document.getElementById("mainProfile").src = text;
+            base64Img = text;
+            // console.log(text)
+        }
+    });
+}
 var load = () => {
     let tokenName = window.localStorage["tokenName"];
     let tokenValue = window.localStorage["tokenValue"];
@@ -42,6 +55,7 @@ var load = () => {
             }
         }
     });
+    getProfile()
 
 
 }

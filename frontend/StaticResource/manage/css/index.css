@@ -5,9 +5,54 @@
     text-align: center;
 }
 .photo{
-    border-radius: 50%;
+    clip-path: circle();
     width: 100%;
     height: 400px;
+}
+.photo:hover{
+    opacity: 0.5;
+}
+.camera{
+    opacity: 0.01;
+    position: absolute;left: 0;right: 0;top: -40%;bottom: 0;margin: auto; 
+    cursor: pointer;
+}
+.camera:hover{
+    opacity: 0.6;
+    
+}
+.profile{
+    width: 30%;
+    clip-path: circle();
+}
+
+.upload{
+    /* margin-left: auto;
+    margin-right: auto; */
+    /* width: 80%;
+    height: 80%; */
+    background-color: rgb(255,255,255);
+    text-align: center;
+    border-radius: 25px;
+    padding: 50px;  
+    /* float: left; */
+    /* display: flex; */
+    display: table-cell;
+    /* vertical-align: middle; */
+    box-shadow: 0px 0px 15px 5px rgb(232,232,232);
+    align-self: flex-end;
+
+}
+.uploadBtn{
+    background-color: rgb(38,153,251);
+    border: none;
+    padding: 8px 16px;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    border-radius: 5px;
+    line-height: 20px;
+    cursor:pointer; 
 }
 .upmargin{
 }
@@ -31,6 +76,7 @@
 }
 @media screen and (max-width:768px){
     .photo {width: 50%;height: auto;border-radius: 0%;}
+    .camera{left:-100%; right: 0;margin: auto; opacity: 0.2;}
     .upmargin{
         margin-top: 20px;
     }
