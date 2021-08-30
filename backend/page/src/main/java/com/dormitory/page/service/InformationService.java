@@ -46,7 +46,9 @@ public class InformationService {
         } catch (Exception e) {
             return "IO Exception";
         }
-        return new String(Base64.getEncoder().encode(data), StandardCharsets.UTF_8);
+        String base = new String(Base64.getEncoder().encode(data), StandardCharsets.UTF_8);
+        base = "data:image/jpg;base64," + base;
+        return base;
     }
 
     public String changePersonImg(String userId, String imgBase64) {
